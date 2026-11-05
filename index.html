@@ -163,3 +163,9 @@ background:#f7fbff;
 
 </body>
 </html>
+<script>
+fetch("vehiculos.json")
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error(error));
+</script>
