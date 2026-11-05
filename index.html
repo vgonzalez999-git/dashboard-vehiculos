@@ -2,24 +2,98 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Prueba</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dashboard Vehículos Vicente</title>
+
 <style>
 body{
-font-family:Arial,sans-serif;
-background:#f0f0f0;
-padding:40px;
+font-family:Segoe UI,Arial,sans-serif;
+background:#f4f6f9;
+margin:0;
 }
-h1{
+
+header{
+background:#0f4c81;
+color:white;
+padding:25px;
+}
+
+h1{margin:0;}
+
+.container{
+padding:20px;
+}
+
+.kpis{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-bottom:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+.card h3{
+margin:0;
+font-size:14px;
+color:#666;
+}
+
+.valor{
+font-size:32px;
+font-weight:bold;
 color:#0f4c81;
+margin-top:10px;
+}
+
+table{
+width:100%;
+background:white;
+border-collapse:collapse;
+border-radius:12px;
+overflow:hidden;
+}
+
+th{
+background:#0f4c81;
+color:white;
+padding:12px;
+}
+
+td{
+padding:12px;
+border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+background:#f7fbff;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Dashboard Vehículos de Vicente</h1>
+<header>
+<h1>🚗 Dashboard Ejecutivo de Vehículos</h1>
+</header>
 
-<p>GitHub Pages funciona correctamente.</p>
+<div class="container">
 
-</body>
-</html>
+<div class="kpis">
+
+<div class="card">
+<h3>Vehículos</h3>
+<div class="valor">6</div>
+</div>
+
+<div class="card">
+<h3>Km Totales</h3>
+<div class="valor">1.243.867</div>
+</div>
+
+<div class
