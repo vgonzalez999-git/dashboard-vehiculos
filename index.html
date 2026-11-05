@@ -2,48 +2,61 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dashboard Vehículos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Ejecutivo de Vehículos</title>
 
 <style>
+
+:root{
+--azul:#0f4c81;
+--azul2:#1f6fb2;
+--gris:#f3f6fa;
+--texto:#1f2937;
+--verde:#16a34a;
+--rojo:#dc2626;
+--ambar:#f59e0b;
+}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
 body{
-    font-family:Segoe UI,Arial,sans-serif;
-    margin:0;
-    background:#f4f6f9;
+font-family:Segoe UI,Arial,sans-serif;
+background:var(--gris);
+color:var(--texto);
 }
 
 header{
-    background:#0f4c81;
-    color:white;
-    padding:25px;
+background:linear-gradient(135deg,var(--azul),var(--azul2));
+color:white;
+padding:25px;
+box-shadow:0 2px 8px rgba(0,0,0,.15);
 }
 
-.card{
-    background:white;
-    margin:20px;
-    padding:20px;
-    border-radius:12px;
-    box-shadow:0 2px 8px rgba(0,0,0,.1);
+header h1{
+font-size:2rem;
 }
 
-h1{
-    margin:0;
+.container{
+padding:20px;
 }
-</style>
 
-</head>
+.kpis{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-bottom:25px;
+}
 
-<body>
+.kpi{
+background:white;
+padding:20px;
+border-radius:14px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
 
-<header>
-<h1>Dashboard de Vehículos de Vicente</h1>
-</header>
-
-<div class="card">
-<h2>Proyecto en construcción</h2>
-<p>GitHub Pages funciona correctamente.</p>
-<p>Próximamente aparecerá aquí el dashboard profesional de vehículos.</p>
-</div>
-
-</body>
-</html>
+.kpi h3{
+font-size:.9rem;
