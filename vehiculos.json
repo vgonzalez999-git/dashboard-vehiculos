@@ -2,37 +2,37 @@
   {
     "vehiculo": "Range Rover Evoque",
     "km": 184880,
-    "seguro": 750,
+    "seguro": 750.00,
     "mantenimiento": 7026
   },
   {
     "vehiculo": "Volvo XC90",
     "km": 184720,
-    "seguro": 795,
+    "seguro": 795.38,
     "mantenimiento": 3048
   },
   {
     "vehiculo": "Volkswagen Golf",
     "km": 378561,
-    "seguro": 1193,
+    "seguro": 399.08,
     "mantenimiento": 8919
   },
   {
     "vehiculo": "Chevrolet Venture",
     "km": 283500,
-    "seguro": 426,
+    "seguro": 555.82,
     "mantenimiento": 2746
   },
   {
     "vehiculo": "DS3",
     "km": 135406,
-    "seguro": 736,
+    "seguro": 791.44,
     "mantenimiento": 763
   },
   {
     "vehiculo": "BMW 1200 RT",
     "km": 76800,
-    "seguro": 437,
+    "seguro": 437.75,
     "mantenimiento": 2220
   }
 ]
