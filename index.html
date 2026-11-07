@@ -1,157 +1,22 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dashboard Vehículos Vicente</title>
-
-<style>
-body{
-    font-family:Segoe UI,Arial,sans-serif;
-    background:#f4f6f9;
-    margin:0;
-}
-
-header{
-    background:#0f4c81;
-    color:white;
-    padding:20px;
-}
-
-.container{
-    padding:20px;
-}
-
-.kpis{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-    margin-bottom:20px;
-}
-
-.card{
-    background:white;
-    border-radius:12px;
-    padding:20px;
-    box-shadow:0 2px 8px rgba(0,0,0,.08);
-}
-
-.numero{
-    font-size:32px;
-    font-weight:bold;
-    color:#0f4c81;
-}
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:white;
-}
-
-th{
-    background:#0f4c81;
-    color:white;
-    padding:10px;
-}
-
-td{
-    padding:10px;
-    border-bottom:1px solid #ddd;
-}
-</style>
+<title>Prueba JSON</title>
 </head>
-
 <body>
 
-<header>
-<h1>🚗 Dashboard Ejecutivo de Vehículos</h1>
-</header>
+<h1>Prueba JSON</h1>
 
-<div class="container">
-
-<div class="kpis">
-
-<div class="card">
-<div>Vehículos</div>
-<div id="numVehiculos" class="numero">0</div>
-</div>
-
-<div class="card">
-<div>Km Totales</div>
-<div id="kmTotales" class="numero">0</div>
-</div>
-
-<div class="card">
-<div>Mantenimiento</div>
-<div id="mantTotal" class="numero">0 €</div>
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>Flota</h2>
-
-<table id="tablaVehiculos">
-
-<thead>
-<tr>
-<th>Vehículo</th>
-<th>Km</th>
-<th>Seguro</th>
-<th>Mantenimiento</th>
-</tr>
-</thead>
-
-<tbody>
-
-</tbody>
-
-</table>
-
-</div>
-
-</div>
+<div id="resultado">Cargando...</div>
 
 <script>
-
 fetch("vehiculos.json")
 .then(r => r.json())
 .then(datos => {
-
-document.getElementById("numVehiculos").innerText =
-datos.length;
-
-const kmTotales =
-datos.reduce((s,v)=>s+v.km,0);
-
-document.getElementById("kmTotales").innerText =
-kmTotales.toLocaleString("es-ES");
-
-const mantTotal =
-datos.reduce((s,v)=>s+v.mantenimiento,0);
-
-document.getElementById("mantTotal").innerText =
-mantTotal.toLocaleString("es-ES")+" €";
-
-const tbody =
-document.querySelector("#tablaVehiculos tbody");
-
-datos.forEach(v=>{
-
-tbody.innerHTML += `
-<tr>
-<td>${v.vehiculo}</td>
-<td>${v.km.toLocaleString("es-ES")}</td>
-<td>${v.seguro.toLocaleString("es-ES")} €</td>
-<td>${v.mantenimiento.toLocaleString("es-ES")} €</td>
-</tr>
-`;
-
+  document.getElementById("resultado").innerHTML =
+    "Vehículos encontrados: " + datos.length;
 });
-
-});
-
 </script>
 
 </body>
