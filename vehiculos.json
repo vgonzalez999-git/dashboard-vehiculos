@@ -30,9 +30,9 @@
     "mantenimiento":763
   },
   {
-    "vehiculo":"BMW 1200 RT",
-    "km":76800,
-    "seguro":437,
-    "mantenimiento":0
-  }
+  "vehiculo":"BMW 1200 RT",
+  "km":76800,
+  "seguro":437,
+  "mantenimiento":2220
+}
 ]
