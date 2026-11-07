@@ -2,20 +2,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Prueba JSON</title>
+<title>Dashboard Vehículos</title>
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#f4f6f9;
+margin:20px;
+}
+h1{
+color:#0f4c81;
+}
+#resultado{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 2px 5px rgba(0,0,0,.1);
+}
+</style>
 </head>
 <body>
 
-<h1>Prueba JSON</h1>
+<h1>Dashboard Vehículos</h1>
 
-<div id="resultado">Cargando...</div>
+<div id="resultado">
+Cargando...
+</div>
 
 <script>
 fetch("vehiculos.json")
 .then(r => r.json())
 .then(datos => {
-  document.getElementById("resultado").innerHTML =
-    "Vehículos encontrados: " + datos.length;
+document.getElementById("resultado").innerHTML =
+"Vehículos encontrados: " + datos.length;
 });
 </script>
 
