@@ -3,36 +3,66 @@
     "vehiculo": "Range Rover Evoque",
     "km": 184880,
     "seguro": 750.00,
-    "mantenimiento": 7026
+    "mantenimiento": 7026,
+    "compania": "Mutua",
+    "poliza": "",
+    "vencimiento": "2027-03-15",
+    "partesPermitidos": 3,
+    "partesUtilizados": 1
   },
   {
     "vehiculo": "Volvo XC90",
     "km": 184720,
     "seguro": 795.38,
-    "mantenimiento": 3048
+    "mantenimiento": 3048,
+    "compania": "Mutua",
+    "poliza": "4985737",
+    "vencimiento": "2027-03-22",
+    "partesPermitidos": 3,
+    "partesUtilizados": 0
   },
   {
     "vehiculo": "Volkswagen Golf",
     "km": 378561,
     "seguro": 399.08,
-    "mantenimiento": 8919
+    "mantenimiento": 8919,
+    "compania": "Mutua",
+    "poliza": "4382549",
+    "vencimiento": "2027-03-08",
+    "partesPermitidos": 3,
+    "partesUtilizados": 0
   },
   {
     "vehiculo": "Chevrolet Venture",
     "km": 283500,
     "seguro": 555.82,
-    "mantenimiento": 2746
+    "mantenimiento": 2746,
+    "compania": "Mutua",
+    "poliza": "2440425",
+    "vencimiento": "2027-05-18",
+    "partesPermitidos": 3,
+    "partesUtilizados": 3
   },
   {
     "vehiculo": "DS3",
     "km": 135406,
     "seguro": 791.44,
-    "mantenimiento": 763
+    "mantenimiento": 763,
+    "compania": "Mutua",
+    "poliza": "10106101",
+    "vencimiento": "2027-05-25",
+    "partesPermitidos": 3,
+    "partesUtilizados": 0
   },
   {
     "vehiculo": "BMW 1200 RT",
     "km": 76800,
     "seguro": 437.75,
-    "mantenimiento": 2220
+    "mantenimiento": 2220,
+    "compania": "AMV",
+    "poliza": "867240C00399776",
+    "vencimiento": "2027-09-02",
+    "partesPermitidos": 3,
+    "partesUtilizados": 0
   }
 ]
