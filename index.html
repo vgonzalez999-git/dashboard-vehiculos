@@ -1,40 +1,187 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Dashboard Vehículos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard Vehículos Vicente</title>
+
 <style>
 body{
-font-family:Arial,sans-serif;
-background:#f4f6f9;
-margin:20px;
+    font-family:Segoe UI,Arial,sans-serif;
+    margin:0;
+    background:#f4f6f9;
 }
-h1{
-color:#0f4c81;
+
+header{
+    background:#0f4c81;
+    color:white;
+    padding:20px;
 }
-#resultado{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 2px 5px rgba(0,0,0,.1);
+
+.container{
+    padding:20px;
+}
+
+.kpis{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.card{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+
+.titulo{
+    color:#666;
+    font-size:14px;
+}
+
+.numero{
+    font-size:32px;
+    font-weight:bold;
+    color:#0f4c81;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+th{
+    background:#0f4c81;
+    color:white;
+    padding:10px;
+}
+
+td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f5f9ff;
+}
+
+h2{
+    margin-top:0;
+}
+
+@media(max-width:700px){
+    .numero{
+        font-size:24px;
+    }
+
+    table{
+        font-size:13px;
+    }
 }
 </style>
 </head>
+
 <body>
 
-<h1>Dashboard Vehículos</h1>
+<header>
+<h1>🚗 Dashboard Ejecutivo de Vehículos</h1>
+</header>
 
-<div id="resultado">
-Cargando...
+<div class="container">
+
+<div class="kpis">
+
+<div class="card">
+<div class="titulo">Vehículos</div>
+<div id="vehiculos" class="numero">0</div>
+</div>
+
+<div class="card">
+<div class="titulo">Km Totales</div>
+<div id="kms" class="numero">0</div>
+</div>
+
+<div class="card">
+<div class="titulo">Mantenimiento</div>
+<div id="mantenimiento" class="numero">0 €</div>
+</div>
+
+<div class="card">
+<div class="titulo">Seguros</div>
+<div id="seguros" class="numero">0 €</div>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Flota</h2>
+
+<table id="tabla">
+
+<thead>
+<tr>
+<th>Vehículo</th>
+<th>Km</th>
+<th>Seguro</th>
+<th>Mantenimiento</th>
+</tr>
+</thead>
+
+<tbody></tbody>
+
+</table>
+
+</div>
+
 </div>
 
 <script>
+
 fetch("vehiculos.json")
 .then(r => r.json())
 .then(datos => {
-document.getElementById("resultado").innerHTML =
-"Vehículos encontrados: " + datos.length;
+
+document.getElementById("vehiculos").textContent =
+datos.length;
+
+const kms =
+datos.reduce((s,v)=>s+v.km,0);
+
+document.getElementById("kms").textContent =
+kms.toLocaleString("es-ES");
+
+const mantenimiento =
+datos.reduce((s,v)=>s+v.mantenimiento,0);
+
+document.getElementById("mantenimiento").textContent =
+mantenimiento.toLocaleString("es-ES")+" €";
+
+const seguros =
+datos.reduce((s,v)=>s+v.seguro,0);
+
+document.getElementById("seguros").textContent =
+seguros.toLocaleString("es-ES")+" €";
+
+const tbody =
+document.querySelector("#tabla tbody");
+
+datos.forEach(v=>{
+
+tbody.innerHTML += `
+<tr>
+<td>${v.vehiculo}</td>
+<td>${v.km.toLocaleString("es-ES")}</td>
+<td>${v.seguro.toLocaleString("es-ES")} €</td>
+<td>${v.mantenimiento.toLocaleString("es-ES")} €</td>
+</tr>`;
 });
+
+});
+
 </script>
 
 </body>
